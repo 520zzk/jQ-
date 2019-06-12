@@ -1,0 +1,39 @@
+/*
+* @Author: Marte
+* @Date:   2018-11-12 09:29:40
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-11-12 09:44:46
+*/
+body,img,div,p,ul,li{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+}
+img{
+    vertical-align:top;
+    border:0px;
+}
+body{
+    background:#000;
+}
+#top{
+     width:564px;
+     text-align: center;
+}
+#top p{
+    color:#fff;
+}
+#frame{
+    width:564px;
+    height:692px;
+    background:url(../images/frame.png)no-repeat;
+    position:absolute;
+
+}
+#pic_box{
+    position:relative;
+    width:367px;
+    left:91px;
+    top:84px;
+    overflow:hidden;
+}

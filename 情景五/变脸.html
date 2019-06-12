@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./public/zzz.css">
+    <script src="public/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+  $(document).ready(function(){
+   var num=0;
+   var ali=document.getElementsByClassName('ul1')[0].getElementsByTagName('li');
+   var cenX=ali[0].offsetLeft+ali[0].offsetWidth/2;
+    for(var i=0;i<ali.length;i++){
+        ali[i].num=0;
+    }
+
+    $(".ul1>li").click(function(ev){
+      var offset=ali[0].offsetWidth;
+         if(judeg(ev)){
+            // console.log('右');
+             if(this.num<9){
+              this.num++;
+              offset='-'+this.num*offset;
+              $(this).animate({left:offset},100);
+             
+            }
+       }else{
+            //  console.log('左');
+           if(this.num>0){
+            this.num--;
+            offset='-'+this.num*offset;
+            $(this).animate({left:offset},100);
+           
+            }
+       }
+
+    });
+
+
+    function judeg(ev){
+        var ev = ev || window.event;
+        var mouseX=ev.clientX;
+       if(mouseX>cenX){
+          return true;
+       }else{
+          return false;
+       }
+    }
+
+  });
+
+    </script>
+</head>
+<body> 
+    <div class="box-bg"></div>
+        <header id="top" class="">
+                <img src="images/Monster_Mashup.png" alt="">
+                <p>Make your own monster face by clicking on the picture.</p>
+        </header>
+       
+        <div class="box">
+            
+            <ul class="ul1">
+                <li><img src="./images/headsstrip.jpg" alt=""></li>
+                <li> <img src="./images/eyesstrip.jpg" alt=""></li>
+                <li><img src="./images/nosesstrip.jpg" alt=""></li>
+                <li><img src="./images/mouthsstrip.jpg" alt=""></li>
+            </ul>
+        </div>
+
+</body>
+
+</html>

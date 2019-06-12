@@ -1,0 +1,38 @@
+body,img,div,p{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+#main>div{
+	float:left;
+	height:245px;
+	text-align:left;
+	
+}
+#main img{
+	margin-top:5px;
+	width:230px;
+	height:245px;
+	margin-left:5px;
+	border: solid #000 1px;
+}
+.discount_Msg{
+	width:230px;
+	display:none;
+	text-align:center;
+}
+.discount_Msg  span{
+	font-size:18px;
+	color:#fff;
+}
+#header{
+ 	width:100%;
+ 	border: 0px;
+ 	height:50px;
+}
+
+#main{
+	width:1000px;
+	background-color:rgb(179, 105, 182);
+	height: 400px;
+}

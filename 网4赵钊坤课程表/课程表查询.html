@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>课程表</title>
+    <style type="text/css">
+    body,img,a,h1,h2,h3,h4,h5,h6,p,ul,li,ol,td,dd,span{
+        margin:0px;
+        padding:0px;
+        list-style:none;
+    }
+    a{
+     text-decoration:none;   
+    }
+    img{
+        border:0px;
+        vertical-align:top;
+    }
+    .box{
+        width:1200px;
+        margin:0 auto;
+        position:relative;
+        top:30px;
+    }
+    .box h1,.box p{
+        text-align: center;
+    }
+    .box span{
+        font-size:13px;
+        margin-left:15px;
+        color:#c0c0c0;
+    }
+    .table{
+        margin:10px 0 0 0;
+        border:3px solid pink;
+        text-align: center;
+      
+       
+    }
+    .table td{
+        border:1px solid #145872;
+      
+    }
+    .table thead tr{
+        background:#e6b925;
+    }
+    .tr-body{
+        font-size:12px;
+        height:25px;
+    }
+    .one{
+        background:#807FC1;
+        color:#FFF;
+    }
+    .two{
+        background:#639CCA;
+        color:#FFF:
+    }
+    .three{
+        background:#000;
+        color:#fff;
+    }
+    .four{
+        background:#95FE7D;
+        color:#000;
+    }
+    </style>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var arrone=['第一节','第二节','第三节','第四节','中午','第五节','第六节','第七节','第八节','第九节','第十节'];
+            $('input:last').click(function(){
+               var t=$('input:first').val();
+            
+               if(t){
+                    $('td').removeClass('three').removeClass('four');
+                    $("td:contains("+t+")").addClass("three");
+                    if(($('td:contains('+t+')').length==0)&&(t!="无课"))
+                    alert(t+"   在表中没有");
+                   switch(t){
+                         case '星期一':
+                      $('tbody tr td:nth-child(2):parent:not(:contains("休息"))').addClass("three");break;
+                    
+                         case '星期二':
+                      $('tbody tr td:nth-child(3):parent:not(:contains("休息"))').addClass("three");break;
+                         case '星期三':
+                      $('tbody tr td:nth-child(4):parent:not(:contains("休息"))').addClass("three");break;
+                         case '星期四':
+                      $('tbody tr td:nth-child(5):parent:not(:contains("休息"))').addClass("three");break;
+                         case '星期五':
+                      $('tbody tr td:nth-child(6):parent:not(:contains("休息"))').addClass("three");break;
+                    }
+                     for(var i=0;i<arrone.length;i++){
+                         if(t==arrone[i]||t==arrone[i+1]){
+                                if(i==4){}
+                                else $('tbody tr:nth-child('+(i+1)+') :not(td:first):parent').addClass('three');
+                         }
+                     }  
+               }else{
+                   alert('不能为空哦=-=||');
+               }
+               if(t=="无课"){
+                $('td').removeClass('three');
+                   $("td:empty").addClass('four');
+               }
+           });
+        });
+    </script>
+</head>
+
+<body>
+    
+    <div class="box">
+        <h1>个人课程表</h1>
+        <p>2018-2019学年</p>
+        <input type="text">
+        <input type="button" value="查询">
+        <span>*查询可以按课程，也可以按天，同时也可以按节次查询,查询空课请输入无课*</span>
+        <div>
+            <table width="1200" class="table" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <td>节次</td>
+                        <td>星期一</td>
+                        <td>星期二</td>
+                        <td>星期三</td>
+                        <td>星期四</td>
+                        <td>星期五</td>
+                        <td>星期六</td>
+                        <td>星期日</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="tr-body">
+                        <td >第一节</td>
+                        <td rowspan="2">JQuery框架技术(陈觎)<br/>(1-15,凌峰楼B座101,凌峰楼B座102)</td>
+                        <td rowspan="2">HTML 5(何定华)<br/>(1-15,凌峰楼B座511)</td>
+                        <td rowspan="2">操作系统（Linux）(程琼)<br/>(1-15,凌峰楼B座612)</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2">HTML 5 (何定华)<br/>(1-15,凌峰楼B座201)</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr class="tr-body">
+                        <td >第二节</td>
+                   
+                    </tr>
+                    <tr class="tr-body">
+                        <td >第三节</td>
+                        <td rowspan="2">PHP网站内容管理系统应用与开发<br/>(何定华)(1-18,凌峰楼B座201)</td>
+                        <td rowspan="2">形势与政策(吴树堂)<br/>(2-3,凌峰楼B座310)</td>
+                        <td rowspan="2">PHP网站内容管理系统应用与开发<br/> (何定华)(1-18,凌峰楼B座201)</td>
+                        <td rowspan="2">JQuery框架技术(陈觎)<br/>(1-15,凌峰楼B座101,凌峰楼B座102)</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr class="tr-body">
+                        <td >第四节</td>
+               
+                    </tr>
+                    <tr class="tr-body four">
+                        <td>中午</td>
+                        <td colspan="7">休息</td>
+                    </tr>
+                    <tr class="tr-body">
+                        <td>第五节</td>
+                        <td rowspan="2">操作系统（Linux） (程琼)<br /> (1-15,凌峰楼B座511)</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2">形势与政策(吴树堂)<br/> (2-3,凌峰楼B座110)</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr class="tr-body">
+                        <td>第六节</td>
+                     
+                    </tr>
+                    <tr class="tr-body">
+                        <td>第七节</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2">网络组建与维护 (陈欣)<br/>(1-15,凌峰楼B座511)</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr class="tr-body">
+                        <td>第八节</td>
+                        
+                    </tr>
+                    <tr class="tr-body">
+                        <td>第九节</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2">平面设计与制作(李洁星)<br/>(1-12,凌峰楼B座612)</td>
+                        <td rowspan="2">平面设计与制作(李洁星)<br/>(1-12,凌峰楼B座612)</td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                    </tr>
+                    <tr class="tr-body">
+                        <td>第十节</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

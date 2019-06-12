@@ -1,0 +1,274 @@
+body,a,img,div,p,span,ul,li,ol,h1,h2,h3,h4,h5,h6,hr{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+}
+a{
+    text-decoration:none;
+}
+img{
+    vertical-align:top;
+    border:none;
+}
+body{
+    height:3000px;
+    background:url("../images/bg.png") #E9E9E9;
+    background-repeat:no-repeat;
+    background-position:top center;
+    background-size:contain;
+   
+}
+.box{
+    width:1024px;
+    margin:0 auto;
+    position:relative;
+    margin-top:30px;
+}
+.box-user{
+    width:100%;
+    height:150px;
+   
+}
+.user-img{
+    width:15%;
+    height:80%;
+    background:url('../images/laoyao.jpg') no-repeat;
+    background-size:cover;
+    border-radius:50%;
+    -moz-border-radius: 50%;      
+    -webkit-border-radius: 50%;
+    float:left;
+}
+.user-info{
+    width:85%;
+    float:right;
+    height:100%;
+    position:relative;
+}
+.user-info h1{
+    color:rgb(155, 35, 51);
+    position: absolute;
+    left:10px;
+    top:15px;
+    font-size:25px;
+}
+.user-info ul{
+    position:absolute;
+    bottom:20px;
+    left:15px;
+    height:50px;
+    line-height:50px;
+}
+.user-info ul li{
+    float:left;
+    font-size:18px;
+    margin-left:20px;
+    color:rgb(155, 35, 51);
+    cursor:pointer;
+}
+.user-info ul li:hover{
+    font-size:20px;
+    text-decoration:underline;
+}
+.user-info ul li:nth-child(1){
+    margin-left:0px;
+}
+.info-icon{
+    width:35%;
+    position:absolute;
+    top:25px;
+    right:10px;
+   
+}
+.info-icon i{
+    display:block;
+    width:40px;
+    height:54px;
+    background-image:url(../images/icon.png);
+    float:left;
+}
+.info-icon p{
+    font-size:14px;
+    float:left;
+    margin-left:5px;
+    color:rgb(56, 44, 17);
+}
+
+.info-icon span{
+    font-size:20px;
+    margin:0 5px 0 5px;
+   
+}
+.box-content{
+    margin-top:10px;
+    width:90%;
+    margin:0 auto;
+    border:1px solid black;
+    background:rgba(228, 213, 132, 0.7);
+}
+.cen-head{
+    width:95%;
+    margin:0 auto;
+    color:rgb(104, 13, 25);
+
+}
+.cen-head h2{
+    font-size:22px;
+    height:50px;
+    border-bottom:3px solid #212121;
+    margin:5px 0 0 0px;
+}  
+.cen-head h3{
+    margin-top:5px;
+    border-bottom: 2px solid #212121; 
+
+}
+.cen-head p{
+    text-align: center;
+    height:100px;
+    margin-top:15px;
+}
+.cen-content{
+    width:95%;
+    margin:0 auto;
+    margin-top:10px;
+    position:relative;
+}
+.cc-left{
+    /* float:left; */
+    width:70%;
+   position:relative;
+  left:0px;
+   top:0px;
+   margin-top:10px;
+
+}
+.cc-left-top{
+    padding-left:10px;
+    height:30px;
+    line-height:30px;
+    background:#F0F0F0;
+    box-shadow:0px 1px 1px #000
+}
+.cc-center{
+    height:150px;
+    width:100%;
+    overflow:hidden;
+    box-shadow:0px 1px 1px #000;
+   
+}
+.cc-right{
+    width:25%;
+    height:180px;
+   position: absolute;
+   left:75%;
+   top:20px;
+   padding:5px;
+}
+.cc-right img{
+    width:180px;
+    height:180px;
+}
+.cc-banner{
+    color:blue;
+    cursor:pointer;
+
+}
+.cc-none{
+    width:550px;
+    height:220px;
+    background:#000;
+   position:absolute;
+    display:none;
+}
+/* .cc-none span{
+    position:absolute;
+    right:0px;
+    tOP:0px;
+    background: red;
+    display: block;
+    width:30px;
+    height:30px;
+} */
+.cc-none img{
+    width:100px;
+    height:100px;
+    float:left;
+    border:solid 2px transparent;
+}
+.cc-none img:hover{
+    border:2px solid red;
+}
+#textarea{
+    height:150px;
+    width:100%;
+   
+}
+.cc-bottom{
+    margin-top:15px;
+}
+.cc-bottom span{
+    display:block;  
+    width:80px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
+    letter-spacing: 5px;
+    background:#7B8C9E;
+    color:#fff;
+    cursor:pointer;
+}
+.show-urse{
+    height:180px;
+    background:rgba(253, 253, 253, 0.5);
+    margin-top:10px;
+}
+.cen-show{
+    width:95%;
+    margin:0 auto;
+    margin-top:10px;
+}
+.cen-show h3{
+    margin-top:5px;
+    border-bottom: 2px solid #212121; 
+    color:rgb(104, 13, 25);
+}
+.show-left{
+    width:15%;
+    height:150px;
+    margin-top:20px;
+    float:left;
+}
+.show-left img{
+    width:100px;
+    height:100px;
+    margin-left:5px;
+}
+.show-right{
+    width:85%;
+    float:left;
+    height:180px;
+}
+.show-right p{
+    margin-top:20px;
+    font-size:18px;
+}
+.show-right p span{
+    color:#9B9B9B;
+    font-size:15px;
+    margin-left:8px;
+}
+.show-content{
+    width:100%;
+    height:150px;
+    margin-top:20px;
+}
+.pre{
+    height:60%;
+    width:95%;
+    overflow:auto;
+    padding:10px;
+    background:rgba(146, 189, 235, 0.719);
+}

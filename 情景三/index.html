@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Jump for Joy</title>
+    <link type="text/css" href="styles/my_style.css" rel="stylesheet">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          function  random(n,m){      /*n==位数，m==前几位是字母*/
+                 var a='';
+                var b=0;
+                var charArr=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+                var numArr=[1,2,3,4,5,6,7,8,9,0];
+                while(b<n){
+                    if(b<m){
+                        a+=charArr[ Math.round(Math.random()*25)];
+                    }else{
+                        a+=numArr[ Math.round(Math.random()*9)];
+                    }
+                    b++
+                }
+               return a;
+                }
+                                        
+           $('#main>div>img').one('click',function(){
+              var t=random(5,2);              /*获取随机码*/
+              var  img1=$('#main>div>img').eq( Math.round(Math.random()*3));   /*随机选取一个图片*/
+              img1.data('key',t);     
+              console.log(img1);                           /*给图片打上自定义属性，值为随机码*/
+              img1.css('border','3px solid red');
+              var code= Math.round(Math.random()*100);
+              if($(this).data('key')==t){       /*判断点击对象有没有随机码*/
+                  $(this).next().show().append('<p>恭喜您！折扣<span>'+code+'%</span></p>折扣码是：<span>'+t+'</span>');   /*对点击对象的下一个兄弟节点操作*/
+              }else{
+                  $(this).next().show().text("很抱歉！没有抽中");
+              }
+             $('#main>div>img').unbind('click');        /*清除*/
+           });
+
+
+        });
+
+    </script>
+</head>
+<body>
+    <div id="header">
+        <h2>幸运点击</h2>
+    </div>
+    <div id="main">
+        <div>
+            <img src="images/jump1.jpg">
+            <div class="discount_Msg"></div>
+         
+        </div>
+        <div>
+            <img src="images/jump2.jpg">
+            <div class="discount_Msg"></div>
+        </div>
+        <div>
+            <img src="images/jump3.jpg">
+            <div class="discount_Msg"></div>
+        </div>
+        <div>
+            <img src="images/jump4.jpg">
+            <div class="discount_Msg"></div>
+        </div>
+
+    </div>
+</body>
+</html>

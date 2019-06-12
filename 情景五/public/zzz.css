@@ -1,0 +1,77 @@
+*{
+    margin:0px;
+    padding:0px;
+    list-style:none;
+
+}
+img{
+   vertical-align:top;
+   border:0px;
+}
+body{
+
+    background:#000;
+ }
+
+#top{
+    width:564px;
+    text-align: center;
+    z-index:2;
+    position:relative;
+}
+#top p{
+   color:#fff;
+}
+.box{
+    z-index:2;
+    width:564px;
+    height:692px;
+    background:url(../images/frame.png)no-repeat;
+  position:relative;
+}
+.box-bg{
+    width:960px;
+    height:640px;
+    animation-name:zzz;
+    animation-duration: 3S;
+    animation-iteration-count:infinite;
+  position:absolute;
+  left:30px;
+  top:0px;
+   z-index:1;
+}
+.ul1{
+    width:367px;
+    overflow:hidden;
+    position:absolute;
+    left:90px;
+    top:85px;
+}
+.ul1 li{
+    position:relative;
+
+}
+
+@keyframes zzz{
+    0%{
+
+    }
+    30% {
+        background: url(../images/lightning-03.jpg) no-repeat;
+      
+    }
+    60% {
+        background: url(../images/lightning-02.jpg) no-repeat;
+      
+    }
+    90%{
+        background: url(../images/lightning-01.jpg) no-repeat;
+       
+    }
+    100%{
+       
+    }
+
+
+}
+

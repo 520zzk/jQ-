@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点操-作留言板</title>
+    <link rel="stylesheet" href="./PublicStyle/index.css">
+    <script src="./PublicStyle/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div class="box">
+        <div class="box-user">
+            <div class="user-img"></div>
+            <div class="user-info">
+                <h1>千年老妖</h1>
+                <ul>
+                    <li>主页</li>
+                    <li>日志</li>
+                    <li>相册</li>
+                    <li>留言板</li>
+                    <li>说说</li>
+                    <li>个人档</li>
+                    <li>音乐</li>
+                    <li>更多</li>
+                </ul>
+                <div class="info-icon">
+                    <i></i>
+                    <p>今日访客量<span>20</span>被挡访客量<span>168</span></p>
+                    <p>访问总量<span>9999</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="box-content">
+            <div class="cen-head">
+                   <h2>留言板</h2>
+                   <h3>主人寄语</h3>
+                   <p>欢迎来到我的空间</p>
+                   <h3>发表你的留言</h3>
+             </div>
+            <div class="cen-content">
+                <input type="text"><span>留言者</span>
+                 <span class="cc-banner">图标选择</span>
+                <div class="cc-left">
+                    <div class="cc-none">
+                        <!-- <span>X</span> -->
+                    </div>
+                    <div class="cc-left-top"><!--<img src="./images/xiao.gif" alt=""><a href="javascript:;">表情</a>--></div>
+                    <div class="cc-center">
+                     <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class='cc-bottom'>
+                        <span class="play">发表</span>
+                       
+                    </div>
+                   
+                </div>
+                <div class="cc-right">
+                    <img src="./images/7.gif"" alt="">
+                </div>
+                
+            </div>
+
+            <div class="cen-show">
+                 <h3>留言信息</h3>
+                 <div class="show-urse">
+                    <div class="show-left"><img src="./images/7.gif" alt=""></div>
+                    <div class="show-right">
+                        <p>毛毛<span>第1楼</span></p>
+                        <div class="show-content">
+                            <pre class="pre">
+我谦卑地问女神：“要是世界上只剩下我和一条狗，你选谁？”
+女神犹豫了下：“我选你”
+我毫不要脸的回：“嗯，我也喜欢你”
+女神被激怒：“那我选狗！”
+我清了清喉咙，字正腔圆地对她说出了颇有杀伤力的三个字：“汪汪汪！”
+                            </pre>
+                           
+                        </div>
+                        <span></span>
+                    </div>
+                 </div>
+            </div>
+        </div>
+        
+    </div>
+</body>
+<script type="text/javascript">
+    var arr=["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg","6.jpg","7.gif","8.gif","9.gif","10.gif"];
+    for(var i=0;i<arr.length;i++){
+        var $img=$('<img src="./images/'+arr[i]+'">');
+        $(".cc-none").append($img);
+    }
+    var src=null; 
+    $('.cc-banner').click(function(){
+      
+        $(".cc-none").css("display","block");
+        $(".cc-none img").click(function(){
+            src=$(this).attr('src');
+            console.log(src);
+           $(".cc-right img").attr("src",$(this).attr('src'));
+           $(".cc-none").css("display","none");
+        })
+    }); 
+    var num=1;var a=null;var b=null;var c=null;
+    $(".play").click(function(){
+        var name=$(".cen-content :input[type='text']").val();
+        var text=$("#textarea").val();
+      
+        if(name==a||text==b||src==c){
+            return false;
+        }else{
+        var urse=`
+        <div class="show-urse">
+                    <div class="show-left"><img src="${src}" alt=""></div>
+                    <div class="show-right">
+                        <p>${name}<span>第${++num}楼</span></p>
+                        <div class="show-content">
+                            <pre class="pre">${text}
+                            </pre>
+                           
+                        </div>
+                        <span></span>
+                    </div>
+                 </div>
+            `;
+            a=name;b=text;c=src;
+        $('.cen-show').prepend(urse);
+        }
+       
+    });
+</script>
+</html>

@@ -1,0 +1,84 @@
+/*
+* @Author: Marte
+* @Date:   2018-11-12 09:33:08
+* @Last Modified by:   Marte
+* @Last Modified time: 2018-11-14 21:41:46
+*/
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background:#000;
+}
+#top{
+    width:545px;
+    margin-left: 120px;
+    text-align: center;
+}
+#top p{
+    color:#fff;
+}
+#frame{
+    position:absolute;
+    left:100px;
+    top: 100px;
+    width:545px;
+    height:629px;
+    background:url('images/frame.png');
+    z-index: 2;
+    overflow:hidden;
+}
+#pic_box{
+    position:relative;
+    left:91px;
+    top: 84px;
+    width:367px;
+    height:460px;
+    z-index:1;
+    overflow:hidden;
+}
+#btn{
+    position:relative;
+    z-index:3;
+    left:150px; 
+    top:10px;
+}
+#btn1,#btn2{
+    width:50px;
+    height:30px;
+    font-size:18px;
+    background:#fff;
+    border:0;
+    color:#000;
+    cursor:pointer;
+    margin-left:15px;
+}
+#lightnig2{
+    position:absolute;
+    left:0px;
+    top: 54px;
+}
+#lightnig3{
+    position:absolute;
+    left:0px;
+    top: 54px;
+}
+.face{
+    position:relative;
+    left:0px;
+    top: 0px;
+    z-index:0;
+}
+#head{
+    height:172px;
+}
+#eyes{
+    height:79px;
+}
+#nose{
+    height:86px;
+}
+#mouth{
+    height:117px;
+}

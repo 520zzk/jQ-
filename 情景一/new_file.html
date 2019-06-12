@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>帮助我们毛茸茸的朋友</title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+
+		<style type="text/css">
+			body,div,span,img,p,ul,li,ol{
+				margin:0px;
+				padding:0px;
+				list-style:none;
+			}
+			img{
+				vertical-align:top;
+				border:none;
+			}
+			#box{
+				width:400px;
+				height:500px;
+
+				margin:0 auto;
+				margin-top:50px;
+			}
+			#box span,#box p{
+				display: inline-block;
+				width:400px;
+				height:50px;
+				line-height:50px;
+				font-size:30px;
+				background:pink;
+				text-align:center;
+			}
+			#box p{
+				border-top:2px solid #548751;
+				cursor:pointer;
+			}
+		</style>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+				var arrimg=['img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg'];//把图片的路径放入数组，便于切换
+				var index=1;								//定下标初始，开始定为0，这样元素与数组即可关联
+				var t=false;							//if判断用，当开关使
+				$("#Obin").click(							//表示id为Obin的元素的点击事件,js中‘.’可理解为“的”
+
+					function(){
+
+						this.index=index;				//this表示当前的点击的元素，元素下标与数组小标相对应
+
+						if(t)								/* 通过if。。else判断，实现一个开关作用*/
+						{	$("#Oimg").slideDown();				/*<---slideDown() 方法通过使用滑动效果，显示隐藏的被选元素。
+						                             * 该效果适用于通过 jQuery 隐藏的元素，或在 CSS 中声明 display:none 的元素（但不适用于 visibility:hidden 的元素）。*/
+							$('#Oimg').attr('src',arrimg[index]);	/*attr() 方法设置或返回被选元素的属性值。*/
+							t=false;
+							index++;
+						}
+						else{
+							$("#Oimg").slideUp();			/*<---slideUp() 方法通过使用滑动效果，隐藏被选元素。*/
+							t=true;
+						}
+
+
+
+
+						if(this.index>arrimg.length-1){			/*还原操作*/
+							index=0;
+
+						}
+
+					});
+
+			}
+
+
+		);
+		</script>
+	</head>
+
+
+
+	<body>
+		<div id="box">
+			<span>展示栏</span>
+			<img src="img/1.jpg" id="Oimg"/>
+			<p id="Obin">点击切换</p>
+		</div>
+	</body>
+</html>

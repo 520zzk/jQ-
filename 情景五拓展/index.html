@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="my_style.css">
+
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(function(){
+             var num=0;      /*闪电*/
+             setInterval(function(){
+             $("#container img:lt(3)").fadeOut(1);
+                num++;
+                if(num==3){
+                 num=0;
+                 }
+                  $("#container img:eq("+num+")").fadeIn(1000);
+                 },1000);
+            /*点击*/
+            $("#head").click(function(){
+             {zzz(this);}
+            });
+            $("#eyes").click(function(){
+             {zzz(this);}
+            });
+            $("#nose").click(function(){
+             {zzz(this);}
+            });
+            $("#mouth").click(function(){
+             {zzz(this);}
+            });
+
+            function zzz(obj){  /*变化*/
+            var left=obj.offsetLeft;
+            if(!$(obj).is(":animated")){
+                left>-367*9?$(obj).animate({left:"-=367px"},1000): $(obj).animate({left:"0px"},1000);
+                }
+}
+            /*随机与重置*/
+            var math=0;
+            for(let i=0;i<$('#pic_box div').length;i++){
+                $("#btn1").click(function(){
+                    math=Math.round(Math.random()*9);
+                    xxx($('#pic_box div')[i],math);
+                });
+                $("#btn2").click(function(){
+                    math=0;
+                    xxx($('#pic_box div')[i],math);
+            });
+            }
+            function xxx(obj,num){
+                $(obj).animate({left:-367*num+'px'},500);
+            }
+        });
+    </script>
+</head>
+<body>
+    <header id="top">
+        <img src="images/Monster_Mashup.png">
+        <p>Make your own monster face by clicking on the picture.</p>
+    </header>
+    <div id="container">
+        <div id="btn">
+            <input type="button" value="随机" id="btn1">
+            <input type="button" value="重置" id="btn2">
+        </div>
+        <img src="images/lightning-01.jpg" id="lightnig1" class="lightning">
+        <img src="images/lightning-02.jpg" id="lightnig2" class="lightning">
+        <img src="images/lightning-03.jpg" id="lightnig3" class="lightning">
+        </div> 
+    <div id="frame">
+            <div id="pic_box">
+                <div id="head" class="face">
+                    <img src="images/headsstrip.jpg" alt="">
+                </div>
+                <div id="eyes" class="face">
+                    <img src="images/eyesstrip.jpg" alt="">
+                </div>
+                <div id="nose" class="face">
+                    <img src="images/nosesstrip.jpg" alt="">
+                </div>
+                <div id="mouth" class="face">
+                    <img src="images/mouthsstrip.jpg" alt="">
+                </div>
+            </div>
+        </div>
+   
+</body>
+</html><SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>
